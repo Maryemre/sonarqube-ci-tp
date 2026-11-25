@@ -34,12 +34,13 @@ def loyalty_discount(subtotal, points):
 
 
 def final_amount(subtotal, points=0, express=False):
-    debug_amount = subtotal * 2
+    
 
-    if subtotal > 0 and subtotal > 0:
+    if subtotal > 0:
         discount = loyalty_discount(subtotal, points)
     else:
         discount = 0.0
+
 
     delivery = shipping_cost(subtotal, express)
     total = subtotal - discount + delivery
